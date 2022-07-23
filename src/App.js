@@ -36,7 +36,13 @@ function App() {
         <div className="Form-amount-wrap">
           <span className="Input-title">You Pay</span>
           <div className="Input-wrap">
-            <input className="Input" onChange={handleChangeSourceAmount} value={sourceAmount} />
+            <input
+              className="Input"
+              onChange={handleChangeSourceAmount}
+              value={sourceAmount}
+              placeholder="Enter USD"
+              data-testid="usd-value"
+            />
             <div className="Symbol-wrap">
               <span className="Symbol-text">USD</span>
               <img src={require('./assets/images/usd.png')} className="Symbol-icon" />
@@ -46,7 +52,6 @@ function App() {
 
 
         <div className="Fees-wrap">
-
           <div className="Fees-left">
             <div className="Fees-line"></div>
             <div className="Ellipce-icon" />
@@ -81,17 +86,17 @@ function App() {
 
             </div>
           </div>
-
-
-
-
         </div>
-
 
         <div className="Form-amount-wrap">
           <span className="Input-title">You Receive</span>
           <div className="Input-wrap">
-            <input className="Input" value={targetAmount} />
+            <input
+              className="Input"
+              value={targetAmount}
+              data-testid="symbol-value"
+              onChange={text => setTargetAmount(text)}
+            />
             <div className="Symbol-wrap">
               <span className="Symbol-text">USDC EVMOS</span>
               <img src={require('./assets/images/usd.png')} className="Symbol-icon" />
